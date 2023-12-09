@@ -1,4 +1,5 @@
 using Sample.WorkerService.Core.Extensions;
+using Sample.WorkerService.Workers;
 using Serilog;
 
 SerilogExtension.AddSerilog();
@@ -16,7 +17,7 @@ try
     IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
-
+        services.AddCronJob<TimerJob>(c => c.CronExpression = @"*/1 * * * *");
     })
     .UseSerilog()
     .Build();

@@ -16,10 +16,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Workers\" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\Sample.WorkerService.Core\Sample.WorkerService.Core.csproj" />
 	</ItemGroup>
 </Project>
