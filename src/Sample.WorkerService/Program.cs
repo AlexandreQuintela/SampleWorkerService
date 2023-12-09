@@ -1,4 +1,3 @@
-using Sample.WorkerService;
 using Sample.WorkerService.Core.Extensions;
 using Serilog;
 
@@ -6,11 +5,18 @@ SerilogExtension.AddSerilog();
 
 try
 {
-    Log.Information("Starting host");
+    Log.Information("Iniciando Host.");
+    Log.Information("----------------");
+    Log.Error("Testando... Mensagem de erro.");
+    Log.Information("Testando... Mensagem de informação.");
+    Log.Fatal("Testando... Erro fatal.");
+    Log.Debug("Testando... Mensagem de Debug.");
+    Log.Warning("Testando... Mensagem de Warning.");
+
     IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>
     {
-        services.AddHostedService<Worker>();
+
     })
     .UseSerilog()
     .Build();
@@ -20,7 +26,7 @@ try
 }
 catch (Exception ex)
 {
-    Log.Fatal(ex, "Host terminated unexpectedly");
+   Log.Fatal(ex, "Host finalizado inesperadamente.");
     return 1;
 }
 finally
