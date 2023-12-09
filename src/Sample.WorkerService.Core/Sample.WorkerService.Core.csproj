@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -6,13 +6,15 @@
 		<Nullable>enable</Nullable>
 		<DockerfileFastModeStage>debug</DockerfileFastModeStage>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
-		<PackageReference Include="Cronos" Version="0.7.1" />
-		<PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
-		<PackageReference Include="MassTransit.RabbitMQ" Version="8.0.2" />
-		<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
-		<PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0" />
+	  <PackageReference Include="Cronos" Version="0.7.1" />
+	  <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+	  <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.2" />
+	  <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+	  <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+	  <PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
+	  <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
 	</ItemGroup>
 
 </Project>
